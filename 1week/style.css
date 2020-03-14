@@ -1,0 +1,36 @@
+.mytitle {
+    color: black;
+    text-align: center;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQqaSZp6XsqGyJ9bpFv-etbiCTOd93xRA9Cv5l0al3ckpWw_rp6');
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    
+    /* display flex를 쓸 때엔 아래 네 줄이 항상 묶여 다닙니다. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mytitle > h1 {
+    margin: 0 0 5px 0;
+  }
+
+  .mytitle > h5 {
+    margin: 5px 0 0 0;
+  }
+
+  .wrap {
+    width: 350px;
+    margin: 50px auto 0 auto;
+    
+  }
+
+  .words{
+    font-family: 'Sunflower', sans-serif;
+  }
+
+  
