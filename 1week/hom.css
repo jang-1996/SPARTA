@@ -19,8 +19,12 @@
 
 @media (min-width: 1200px) {
   .container {
-    width: 450px;
+    width: 500px;
   }
+}
+
+* {
+  font-family: 'Jua', sans-serif;
 }
 
 .container-fluid {
@@ -30,8 +34,13 @@
   margin-left: auto;
 }
 
-.box1{
+.box1 {
   position: absolute;
   left: 50%;
-  margin-left:-50px;
+  margin-left: -50px;
+}
+
+.button-wrapper {
+  /* 내부 내용을 가로 가운데 정렬 */
+  text-align: center;
 }
