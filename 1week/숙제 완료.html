@@ -34,19 +34,36 @@
 
   <!-- 함수 -->
   <script>
+    function cellphone(p) {
+      var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})[-][0-9]{3,4}[-][0-9]{4}$/;
+      return regExp.test(p);
+    }
     function order() {
       let name = $('#order_name').val();
       let type = $('#order_type').val();
-      let count = $('order_count').val();
+      let count = $('#order_count').val();
       let adress = $('#order_adress').val();
       let number = $('#order_number').val();
 
       if (name == '') {
         alert('이름을 입력해주세요.')
         $('#order_name').focus()
-      } else if (type == '') {
+      } else if (type == 'Choose...') {
         alert('종류를 입력해주세요.')
         $('#order_type').focus()
+      } else if (count == 'Choose...') {
+        alert('수량을 입력해주세요.')
+        $('#order_count').focus()
+      } else if (adress == '') {
+        alert('주소를 입력해주세요.')
+        $('#order_adress').focus()
+      }
+      else if (number == '') {
+        alert('전화번호를 입력해주세요.')
+        $('#order_number').focus()
+      } else if (!cellphone(number)) {
+        alert('휴대폰번호 입력 형식이 틀립니다. \n 010-0000-0000으로 입력해주세요.')
+        $('#order_number').focus()
       }
     }
   </script>
@@ -106,7 +123,6 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01">종류</label>
         </div>
-
         <select class="custom-select" id="order_type">
           <option selected>Choose...</option>
           <option value="1">black</option>
@@ -120,7 +136,7 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect02">수량</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect02 order_count">
+        <select class="custom-select" id="order_count">
           <option selected>Choose...</option>
           <option value="1">1</option>
           <option value="2">2</option>
