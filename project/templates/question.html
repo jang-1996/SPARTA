@@ -29,17 +29,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <!--summernote-->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    
+      
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.js"></script>
   </head>
+ 
   <body>
 
 
     <div class="title">
         <nav class="navbar navbar-expand-lg navbar-light bg-custom">
-            <a class="navbar-brand" href="/">Mathelephant</a>
+            <a class="navbar-brand" href="/">
+                <h2>Mathelephant</h2>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -53,6 +55,7 @@
                     </li>
 
 
+
                 </ul>
 
 
@@ -62,8 +65,6 @@
                 </form>
             </div>
         </nav>
-    </div>
-
 
     <div class="container-fluid">
         <div class="cata">
@@ -90,7 +91,8 @@
                 </li>
             </ul>
         </div>
-
+       
+       
         <div class="wrap">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -98,12 +100,14 @@
                 </div>
                 <input type="text" class="form-control" aria-describedby="basic-addon1" id="title">
             </div>
+            <input id="files" name="upload[]" type="file" multiple="multiple" />
+             
 
     <div id="summernote"></div>
     <script>
       $('#summernote').summernote({
         tabsize: 2,
-        height: 120,
+        height: 350,
         toolbar: [
           ['style', ['style']],
           ['font', ['bold', 'underline', 'clear']],
@@ -115,7 +119,7 @@
         ]
       });
     </script>
-
+<p>
 <div class="input-group mb-3">
     <div class="input-group-prepend">
         <label class="input-group-text" for="inputGroupSelect01">카테고리</label>
@@ -127,15 +131,13 @@
         <option value="3">해석학</option>
     </select>
 </div>
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text">첨부파일</span>
-    </div>
-    <div class="custom-file">
-        <input type="file" class="custom-file-input" id="inputGroupFile01">
-        <label class="custom-file-label" for="inputGroupFile01"></label>
-    </div>
-</div>
+</p>
+
+
+
+
+
+
 <div class="input-group mb-3 name_width">
     <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">이름</span>
@@ -147,7 +149,7 @@
 
     <div class="box1">
         <br><br> <button class="btn btn-primary" type="submit" style="right: auto;"
-            onclick="submit()">올리기</button>
+            onclick="submit()" href="javascript:uploadFile();">올리기</button>
     </div>
 </div>
 
