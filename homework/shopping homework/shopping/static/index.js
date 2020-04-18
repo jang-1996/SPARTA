@@ -1,4 +1,4 @@
- function cellphone(p) {
+  function cellphone(p) {
       var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})[-][0-9]{3,4}[-][0-9]{4}$/;
       return regExp.test(p);
     }
@@ -69,18 +69,18 @@
                 data: {},
                 success: function (response) {
                     if (response['result'] == 'success') {
-                        let buying = response['buying'];
-                        for (let i = 0; i < buying.length; i++) {
-                            make_card(buying[i]['name'], buying[i]['type'], buying[i]['count'], buying[i]['address'], buying[i]['number']);
+                        let posting = response['posting'];
+                        for (let i = 0; i < posting.length; i++) {
+                            make_card(posting[i]['title'], posting[i]['text'], posting[i]['type'], posting[i]['username']);
                         }
                     } else {
-                        alert('주문을 받아오지 못했습니다');
+                        alert('질문을 받아오지 못했습니다');
                     }
                 }
             })
         }
 
-        function make_card(name, type, count, address, number) {
+        function make_card(title, text, type, username) {
             let temp_html = '<tr>\
                                 <td>'+ name + '</td>\
                                 <td>'+ type + '</td>\
